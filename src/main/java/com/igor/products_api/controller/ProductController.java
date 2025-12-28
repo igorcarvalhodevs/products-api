@@ -2,6 +2,7 @@ package com.igor.products_api.controller;
 
 import com.igor.products_api.dto.CreateProductRequest;
 import com.igor.products_api.dto.ProductResponse;
+import com.igor.products_api.dto.UpdateProductRequest;
 import com.igor.products_api.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -33,6 +34,20 @@ public class ProductController {
      @GetMapping
     public List<ProductResponse> findAll() {
         return productService.findAll();
+    }
+
+    @PutMapping("/{id}")
+    public ProductResponse update(
+            @PathVariable Long id,
+            @RequestBody UpdateProductRequest request
+    ) {
+        return productService.update(id, request);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id) {
+        productService.delete(id);
     }
 }
 

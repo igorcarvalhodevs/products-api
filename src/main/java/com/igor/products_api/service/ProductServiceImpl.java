@@ -66,6 +66,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<ProductResponse> findAll() {
         List<Product> products = productRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
         return products.stream().map(this::toResponse).toList();
