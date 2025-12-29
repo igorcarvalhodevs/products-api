@@ -140,3 +140,9 @@ postman/products-api-validation-tests.postman_collection.json
 - This project is being evolved incrementally.
 
 - The README will be further expanded at later stages of development.
+
+---
+
+## 👤 Author
+
+**Igor de Carvalho**
