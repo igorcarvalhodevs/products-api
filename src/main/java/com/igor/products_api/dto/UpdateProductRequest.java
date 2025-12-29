@@ -1,9 +1,17 @@
 package com.igor.products_api.dto;
 
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
+
 public class UpdateProductRequest {
 
+    @Size(max = 255, message = "name must have at most 255 characters")
     private String name;
+
+    @Size(max = 500, message = "description must have at most 500 characters")
     private String description;
+
+    @Positive(message = "priceCents must be greater than 0")
     private Long priceCents;
 
     public String getName() {
@@ -18,4 +26,5 @@ public class UpdateProductRequest {
         return priceCents;
     }
 }
+
 
