@@ -1,34 +1,34 @@
 # Products API
 
-API REST desenvolvida em Java com Spring Boot para gerenciamento de produtos, implementando operações CRUD completas com semântica HTTP adequada.
+RESTful API developed in Java using Spring Boot for product management, implementing full CRUD operations with proper HTTP semantics, layered architecture, and robust validation.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Technologies Used
 
 - Java 17
 - Spring Boot
 - Spring Web
 - Spring Data JPA
 - Flyway
-- H2 Database (ambiente local)
+- H2 Database (local environment)
 - Maven
 
 ---
 
-## 📌 Funcionalidades Implementadas
+## 📌 Implemented Features
 
-- Criar produto
-- Buscar produto por ID
-- Listar todos os produtos
-- Atualizar produto (update parcial)
-- Remover produto
-- Tratamento global de erros
-- Uso correto de status HTTP
+- Create product
+- Retrieve product by ID
+- List all products
+- Update product (partial update supported)
+- Delete product
+- Global exception handling
+- Proper usage of HTTP status codes
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📂 Project Structure
 
 ```text
 src/main/java/com/igor/products_api
@@ -43,83 +43,100 @@ src/main/java/com/igor/products_api
 
 ---
 
-## 🔗 Endpoints Disponíveis
+## 🔗 Available Endpoints
 
-### Criar produto
+### Create product
 **POST** `/products`
 
 ```json
 {
-  "name": "Mouse Gamer",
-  "description": "Mouse com 6 botões e sensor 12k DPI",
+  "name": "Gaming Mouse",
+  "description": "Mouse with 6 buttons and 12k DPI sensor",
   "priceCents": 19990
 }
 ```
-Status: 201 Created
+## Response:
+- 201 Created
 
 ---
 
-### Buscar produto por ID
+### Get product by ID
 **GET** `/products/{id}`
 
-Status: 200 OK
-Erro: 404 Not Found
+## Responses:
+- 200 OK
+- 404 Not Found
 
 ---
 
-### Listar produtos
+### List products
 **GET** `/products`
 
-Status: 200 OK
+## Response:
+- 200 OK
 
 ---
 
-### Atualizar produto
+### Update product
 **PUT** `/products/{id}`
 
 ```json
 {
-  "name": "Mouse Gamer Pro",
+  "name": "Gaming Mouse Pro",
   "priceCents": 24990
 }
 ```
-Status: 200 OK
-Erro: 404 Not Found
+## Responses:
+- 200 OK
+- 404 Not Found
 
 ---
 
-### Remover produto
+### Delete product
 **DELETE** `/products/{id}`
 
-Status: 204 No Content
-Erro: 404 Not Found
+## Responses:
+- 204 No Content
+- 404 Not Found
 
 ---
 
-### ⚙️ Como Executar o Projeto
+### ⚙️ Running the Project
 ```bash
 ./mvnw spring-boot:run
 ```
 
 ---
 
-### A API estará disponível em:
+### 🌐 API Base URL
 ```arduino
 http://localhost:8080
 ```
 
 ---
 
-### 🧪 Testes Manuais
+### 🧪 Manual & Validation Tests
 
-Os endpoints foram testados via Postman utilizando requisições HTTP reais.
+All endpoints were tested using Postman with real HTTP requests and automated assertions.
+
+- Successful operations
+
+- Validation errors (400 Bad Request)
+
+- Resource not found scenarios (404 Not Found)
+
+A Postman collection with automated validation tests is available in the repository:
+
+```text
+postman/products-api-validation-tests.postman_collection.json
+```
 
 ---
 
-### 📌 Observações
+### 📌 Notes
 
-- O banco de dados é inicializado automaticamente via Flyway.
+- The database schema is automatically initialized via Flyway migrations.
 
-- Este projeto será evoluído incrementalmente.
+- This project is being evolved incrementally.
 
-- O README será expandido ao final do desenvolvimento.
+- The README will be further expanded at later stages of development.
