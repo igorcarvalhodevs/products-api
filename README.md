@@ -143,6 +143,12 @@ postman/products-api-validation-tests.postman_collection.json
 
 ---
 
+---
+
 ## 👤 Author
 
-**Igor de Carvalho**
+**Igor Carvalho**  
+Backend Developer | Java & Spring Boot  
+
+- GitHub: https://github.com/igorcarvalhodevs
+- LinkedIn: https://www.linkedin.com/in/igorcarvalhodevs
